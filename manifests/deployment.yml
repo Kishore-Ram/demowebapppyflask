@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: cicdcleanapp 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: cicdcleanapp
+  template:
+    metadata:
+      labels:
+        app: cicdcleanapp 
+    spec:
+      containers:
+        - name: cicdcleanapp 
+          image: kishorecicdtest.azurecr.io/cicdcleanapp
+          ports:
+          - containerPort: 80
